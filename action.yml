@@ -1,0 +1,11 @@
+name: 'NPM Runner'
+description: 'Runs NPM script and posts output in PR'
+author: 'Kristian Jones'
+inputs:
+  scriptName:
+    description: 'NPM Script to run'
+    required: true
+    default: 'test'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
