@@ -1,8 +1,7 @@
 // src/index.ts
 import { getInput, setFailed } from '@actions/core';
-import spawn from 'advanced-spawn-async';
 import { resolve } from 'path';
-import run from './run';
+import { exec } from '@actions/exec';
 
 const resolvePath = (relativePath: string): string =>
   resolve(`${process.env.GITHUB_WORKSPACE}/${relativePath}`);
@@ -14,18 +13,26 @@ const scriptPath = resolvePath(scriptPathInput);
 
 async function failScript(result: string): Promise<void> {
   const message = `\`npm run ${scriptName}\` has failed\n\`\`\`${result}\`\`\``;
-  setFailed(message);
+  return setFailed(message);
 }
 
+let myOutput = '';
+
 async function runScript(): Promise<void> {
-  await run(`npm ci`, { cwd: scriptPath });
+  await exec('npm', ['ci'], { cwd: scriptPath, silent: true });
 
-  const { onclose } = spawn('npm', ['run', scriptName], {
+  exec('npm', ['run', scriptName], {
     cwd: scriptPath,
-    event: 'close',
-  });
-
-  onclose.catch(async ({ info: { output } }) => failScript(output.toString()));
+    silent: true,
+    listeners: {
+      stdout: (data: Buffer) => {
+        myOutput += data.toString();
+      },
+      stderr: (data: Buffer) => {
+        myOutput += data.toString();
+      },
+    },
+  }).catch((e) => failScript(myOutput));
 }
 
 runScript().catch((error) => setFailed(error.message));
