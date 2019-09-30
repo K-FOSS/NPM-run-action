@@ -9,8 +9,10 @@ const resolvePath = (relativePath: string): string =>
 
 const scriptName = getInput('scriptName', { required: true });
 const scriptPathInput = getInput('scriptPath', { required: true });
+console.log(`Script Path Input`, scriptPathInput);
 
 const scriptPath = resolvePath(scriptPathInput);
+console.log(`Script Path`, scriptPath);
 
 async function failScript(result: string): Promise<void> {
   const message = `\`npm run ${scriptName}\` has failed\n\`\`\`${result}\`\`\``;
