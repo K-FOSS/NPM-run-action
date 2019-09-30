@@ -1,6 +1,9 @@
 import { spawn } from 'child_process';
 
-export default async function run(command: string, options: { cwd?: string; } = {}): Promise<string> {
+export default async function run(
+  command: string,
+  options: { cwd?: string } = {},
+): Promise<string> {
   return new Promise((resolve, reject) => {
     const args = command.split(' ');
     const bin = args.shift() as string;

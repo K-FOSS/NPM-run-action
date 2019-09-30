@@ -10,29 +10,24 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@types/bl": "^2.1.0",
-    "@types/glob": "^7.1.1",
-    "@types/node": "^12.7.5",
-    "@typescript-eslint/eslint-plugin": "^2.2.0",
-    "@typescript-eslint/parser": "^2.2.0",
-    "eslint": "^6.4.0",
+    "@types/node": "^12.7.8",
+    "@typescript-eslint/eslint-plugin": "^2.3.1",
+    "@typescript-eslint/parser": "^2.3.1",
+    "eslint": "^6.5.0",
     "eslint-config-prettier": "^6.3.0",
     "eslint-config-standard": "^14.1.0",
     "eslint-plugin-import": "^2.18.2",
     "eslint-plugin-jest": "^22.17.0",
     "eslint-plugin-node": "^10.0.0",
-    "eslint-plugin-prettier": "^3.1.0",
+    "eslint-plugin-prettier": "^3.1.1",
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-standard": "^4.0.1",
     "prettier": "^1.18.2",
     "typescript": "^3.6.3"
   },
   "dependencies": {
-    "@actions/core": "^1.1.0",
-    "@actions/github": "^1.1.0",
-    "advanced-spawn-async": "^0.1.0",
-    "await-spawn": "^3.0.0",
-    "glob": "^7.1.4"
+    "@actions/core": "^1.1.1",
+    "advanced-spawn-async": "^0.1.0"
   },
   "prettier": {
     "singleQuote": true,
