@@ -20,7 +20,7 @@ async function failScript(result: string): Promise<void> {
 }
 
 async function runScript(): Promise<void> {
-  await run(`npm ci`, { cwd: resolvePath(scriptPath) });
+  await run(`npm ci`, { cwd: scriptPath });
 
   const { onclose } = spawn('npm', ['run', scriptName], {
     cwd: scriptPath,
