@@ -1,4 +1,4 @@
-FROM mhart/alpine-node:latest
+FROM mhart/alpine-node:12
 WORKDIR /app
 COPY src ./src/
 COPY package.json package-lock.json tsconfig.json ./
