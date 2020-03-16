@@ -6,4 +6,4 @@ COPY package.json package-lock.json tsconfig.json ./
 
 RUN npm ci
 
-ENTRYPOINT ["node", "--loader", "@k-foss/ts-esnode", "--experimental-specifier-resolution=node", "/app"]
+ENTRYPOINT ["node", "--loader", "/app/node_modules/@k-foss/ts-esnode/out/dist/index.js", "--experimental-specifier-resolution=node", "/app"]
