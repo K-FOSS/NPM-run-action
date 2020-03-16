@@ -20,11 +20,14 @@ async function failScript(result: string): Promise<void> {
 let myOutput = '';
 
 async function runScript(): Promise<void> {
-  await exec('npm', ['ci'], { cwd: scriptPath, silent: true });
+  console.log('About to install deps!');
 
+  await exec('npm', ['ci'], { cwd: scriptPath, silent: false });
+
+  console.log('Running script');
   exec('npm', ['run', scriptName], {
     cwd: scriptPath,
-    silent: true,
+    silent: false,
     listeners: {
       stdout: (data: Buffer) => {
         myOutput += data.toString();
