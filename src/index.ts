@@ -1,10 +1,11 @@
 // src/index.ts
 import { getInput, setFailed } from '@actions/core';
-import { resolve } from 'path';
 import { exec } from '@actions/exec';
+import { resolve } from 'path';
 
-const resolvePath = (relativePath: string): string =>
-  resolve(`${process.env.GITHUB_WORKSPACE}/${relativePath}`);
+function resolvePath(relativePath: string): string {
+  return resolve(`${process.env.GITHUB_WORKSPACE}/${relativePath}`);
+}
 
 const scriptName = getInput('scriptName', { required: true });
 const scriptPathInput = getInput('scriptPath', { required: true });

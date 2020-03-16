@@ -6,6 +6,10 @@ inputs:
     description: 'NPM Script to run'
     required: true
     default: 'test'
+  scriptPath:
+    description: 'Path to `package.json`'
+    required: true
+    default: './'
 runs:
   using: 'docker'
   image: 'Dockerfile'
