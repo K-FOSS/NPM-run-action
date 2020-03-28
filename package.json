@@ -31,7 +31,7 @@
   "dependencies": {
     "@actions/core": "1.2.3",
     "@actions/exec": "1.0.3",
-    "@k-foss/ts-esnode": "1.2.1"
+    "@k-foss/ts-esnode": "1.3.1"
   },
   "eslintConfig": {
     "parser": "@typescript-eslint/parser",
