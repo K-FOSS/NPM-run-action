@@ -29,7 +29,7 @@
     "typescript": "3.8.3"
   },
   "dependencies": {
-    "@actions/core": "1.2.3",
+    "@actions/core": "1.9.1",
     "@actions/exec": "1.0.3",
     "@k-foss/ts-esnode": "1.3.1"
   },
